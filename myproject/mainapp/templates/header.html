@@ -1,0 +1,61 @@
+{% load static %}
+<div class="con_1">
+
+    {#  Логотип + название компании  #}
+    <div class="content_1">
+        <img src="{% static 'img/Group.svg' %}" alt="Лого">
+        <h1>Юпитер</h1>
+    </div>
+
+
+    {#  Кнопки со ссылками на др страницы  #}
+    <div class="content_2">
+        <a href="#">Главная</a>
+        <a href="#">Продукция</a>
+        <a href="#">FAQ</a>
+    </div>
+
+
+</div>
+
+
+<div class="con_2">
+
+    {#  выпадающее меню  #}
+    <div class="content_3">
+
+        <div class="dropdown" id="languageDropdown">
+          <div class="dropdown-toggle" id="dropdownToggle">
+            <span id="selectedLang">English</span>
+          </div>
+
+          <div class="dropdown-menu">
+            <div class="dropdown-item">Русский</div>
+            <div class="dropdown-item">O'zbek</div>
+          </div>
+        </div>
+
+    </div>
+
+
+
+        {#  контейнер с переводом на страницу заявки  #}
+    <a href="#">
+        <div class="content_4">
+                <img src="{% static 'img/human.svg' %}" alt="">
+                <span>Оставить заявку</span>
+        </div>
+    </a>
+
+
+        {#  контейнер с переводом на страницу связи  #}
+    <a href="#">
+        <div class="content_5">
+                <img src="{% static 'img/Contact.svg' %}" alt="">
+                <span>Связаться с нами</span>
+        </div>
+    </a>
+
+
+</div>
+

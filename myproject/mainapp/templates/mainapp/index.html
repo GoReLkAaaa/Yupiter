@@ -1,12 +1,7 @@
-<!DOCTYPE html>
+{% extends 'wrapper.html' %}
+{% block content %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Title</title>
-</head>
-<body>
-<h1>Helllo world</h1>
-</body>
-</html>
+<div>
+    <img src="{% static 'img/img_main.png' %}" alt="Картинка" width="100%">
+</div>
+{% endblock %}
