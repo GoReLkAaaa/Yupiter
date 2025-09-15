@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yupiter</title>
+
+    <script type="module" crossorigin src="{% static 'js/form.js' %}" defer></script>
+    <script type="module" crossorigin src="{% static 'js/main-CnO608fQ.js' %}" defer></script>
+    <link rel="stylesheet" crossorigin href="{% static 'css/main-DWKbr1L4.css' %}">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        {% include 'header_uz.html' %}
+    </header>
+
+    <!-- CONTACT MAIN -->
+    <main>
+        <section class="section__form">
+            <div class="form form--contact">
+                <div class="form__container form__container--contact container">
+                    <div class="form__left">
+                        <div class="form__header">
+                            <h2>Konsultatsiyaga yozilish</h2>
+                            <p>Biz bilan bog‘lanish uchun formani to‘ldiring.</p>
+                        </div>
+                        <div class="form__img form__img--contact">
+                            <img src="{% static 'img/form2.png' %}" alt="form1">
+                        </div>
+                        <div class="form__background form__background--contact">
+                            <img src="{% static 'img/points2.png' %}" alt="points">
+                        </div>
+                    </div>
+                    <div class="form__right form__right--contact">
+                        <form action="" class="form__items">
+                            <div class="form__col">
+                                <div class="form__inputs form__inputs--second">
+                                    <div class="form__two-col">
+                                        <div class="form__input">
+                                            <label for="firstName">Ism</label>
+                                            <input type="text" id="firstName" name="firstName"
+                                                placeholder="Ismingizni yozing" required />
+                                        </div>
+                                        <div class="form__input">
+                                            <label for="lastName">Familiya</label>
+                                            <input type="tel" id="lastName" name="lastName"
+                                                placeholder="Familiyangizni yozing" required />
+                                        </div>
+                                    </div>
+                                    <div class="form__input">
+                                        <label for="phone">Telefon raqamingiz</label>
+                                        <input type="tel" id="phone" name="phone"
+                                            placeholder="Telefon raqamingizni yozing" required>
+                                    </div>
+                                    <div class="form__input">
+                                        <label for="formInput">Sizda qaysi turdagi amputatsiya bor?</label>
+
+                                        <!-- Qiymatlar shu yerdan olinadi -->
+                                        <input type="text" id="formValue" value="Qo‘l yo‘q" data-value="Qo‘l yo‘q">
+                                        <input type="text" style="position: absolute; opacity: 0; left: 0;"
+                                            id="formInput">
+                                        <div class="form__additional" id="formAdditional">
+                                            <ul class="form__additional-list">
+                                                <!-- Standart qiymatlar -->
+                                                <li class="form__additional-item" data-value="Qo‘l yo‘q">
+                                                    <p>Qo‘l yo‘q</p>
+                                                </li>
+                                                <li class="form__additional-item" data-value="Barmoq yo‘q">
+                                                    <p>Barmoq yo‘q</p>
+                                                </li>
+                                                <li class="form__additional-item" data-value="Oyoq yo‘q">
+                                                    <p>Oyoq yo‘q</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="form__input">
+                                        <label for="textarea">Qo‘shimcha izoh</label>
+                                        <textarea rows="5" name="textarea" id="textarea"
+                                            placeholder="Qo‘shimcha ma’lumot bermoqchi bo‘lsangiz yozing"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__submit">
+                                <button type="submit" class="form__button link-button">
+                                    <span>Yuborish</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        {% include 'footer_uz.html' %}
+    </footer>
+</body>
+
+</html>

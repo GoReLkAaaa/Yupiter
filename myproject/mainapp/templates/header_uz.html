@@ -1,0 +1,105 @@
+{% load static %}
+{% load url_tags %}
+<div class="header__logo">
+  <div class="header__img">
+    <a href="{% url 'index' %}#main">
+      <img src="{% static 'icon/Image.svg' %}" alt="icon" />
+    </a>
+  </div>
+  <div class="header__text">
+    <a href="{% url 'index' %}#main">
+      Yupiter
+    </a>
+  </div>
+</div>
+<div class="header__adapt">
+  <div class="header__links">
+    <nav class="header__nav menu">
+      <ul class="menu__list">
+        <li class="menu__item"><a href="{% url 'yupiter_uz' %}#main">Bosh sahifa</a></li>
+        <li class="menu__item"><a href="{% url 'products_uz' %}">Protezlar</a></li>
+        <li class="menu__item"><a href="{% url 'yupiter_uz' %}#faq">FAQ</a></li>
+        <li class="menu__item"><a href="{% url 'yupiter_uz' %}#contact">Aloqa</a></li>
+        <li class="menu__item"><a href="{% url 'about_uz' %}">Kompaniya haqida</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="header__lang">
+    <div class="header__select" id="select">
+      <div class="select__head" id="selectText">O‘zbek tili</div>
+      <ul class="select__list">
+        <li class="select__item" data-value="2">
+          <img src="{% static 'icon/russia.png' %}" alt="russia">
+          <a href="{% get_russian_url request %}">Русский</a>
+        </li>
+        <li class="select__item" data-value="3">
+          <img src="{% static 'icon/uzbekistan.png' %}" alt="uzbekistan">
+          <a href="{% get_uzbek_url request %}">O‘zbek tili</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="header__element">
+    <a href="{% url 'contact_uz' %}" class="header__button">
+      <div class="header__button-img">
+        <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M5.92492 7.58008C4.31524 7.58008 2.88739 7.94374 1.94917 8.26009C1.25662 8.49436 0.794922 9.14701 0.794922 9.87832L0.794922 12.1401L5.92492 12.1401"
+            stroke="#171A1F" stroke-width="1.368" stroke-miterlimit="10" stroke-linecap="round" />
+          <path
+            d="M5.93008 7.55997C4.35631 7.55997 3.08008 5.71374 3.08008 4.13997L3.08008 3.56997C3.08008 1.9962 4.35631 0.719971 5.93008 0.719971C7.50385 0.719971 8.78008 1.9962 8.78008 3.56997V4.13997C8.78008 5.71374 7.50385 7.55997 5.93008 7.55997Z"
+            stroke="#171A1F" stroke-width="1.368" stroke-miterlimit="10" stroke-linecap="round" />
+          <path
+            d="M7.72168 9.85502C7.97476 8.87177 8.86738 8.14502 9.92986 8.14502C10.7735 8.14502 11.5099 8.6033 11.9043 9.28445"
+            stroke="#171A1F" stroke-width="1.368" stroke-miterlimit="10" stroke-linecap="round" />
+          <path d="M12.9095 7.94727L12.6644 10.4325L10.2305 9.89667L12.9095 7.94727Z" fill="#171A1F" />
+          <path
+            d="M12.1441 11.575C11.891 12.5582 10.9984 13.285 9.93591 13.285C9.09231 13.285 8.35587 12.8267 7.96143 12.1455"
+            stroke="#171A1F" stroke-width="1.368" stroke-miterlimit="10" stroke-linecap="round" />
+          <path d="M6.9502 13.4825L7.1953 10.9973L9.6292 11.5331L6.9502 13.4825Z" fill="#171A1F" />
+        </svg>
+      </div>
+      <span>Ariza qoldirish</span>
+    </a>
+  </div>
+</div>
+<div class="header__burger-container" id="burger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<div class="header__phone-menu hide cancel" id="phoneMenu">
+  <div class="header__top">
+    <div class="header__links">
+      <nav class="header__nav menu">
+        <ul class="menu__list" id="menuList">
+          <li class="menu__item"><a href="{% url 'yupiter_uz' %}#main">Bosh sahifa</a></li>
+          <li class="menu__item"><a href="{% url 'products_uz' %}">Protezlar</a></li>
+          <li class="menu__item"><a href="{% url 'yupiter_uz' %}#faq">FAQ</a></li>
+          <li class="menu__item"><a href="{% url 'contact_uz' %}">Ariza qoldirish</a></li>
+          <li class="menu__item"><a href="{% url 'yupiter_uz' %}#contact">Aloqa</a></li>
+          <li class="menu__item"><a href="{% url 'about_uz' %}">Kompaniya haqida</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="header__bottom">
+    <div class="header__element header__element-select">
+      <div class="header__mobile-select">
+        <div class="header__select header__element-select" id="select2">
+          <div class="select__head" id="selectText2">Русский</div>
+          <ul class="select__list">
+            <li class="select__item" data-value="2">
+              <img src="{% static 'icon/russia.png' %}" alt="russia">
+              <p>Русский</p>
+            </li>
+            <li class="select__item" data-value="3">
+              <img src="{% static 'icon/uzbekistan.png' %}" alt="uzbekistan">
+              <p>O‘zbek tili</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

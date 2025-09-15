@@ -1,0 +1,73 @@
+{% load static %}
+<div class="footer__container">
+  <div class="footer__top">
+    <div class="footer__left">
+      <div class="footer__card-container">
+        <div class="footer__card">
+          <div class="footer__card-logo">
+            <a href="{% url 'yupiter_uz' %}#main">
+              <img src="{% static 'icon/logo2.svg' %}" alt="logo2">
+              <p>Yupiter</p>
+            </a>
+          </div>
+          <div class="footer__card-info">
+            <p>YTT Negmatov Zarshedjon Zafarjonovich <span>STIR: 310321505</span>
+              <span>Ro‘yxatdan o‘tgan sana: 15.03.2023</span></p>
+          </div>
+          <div class="footer__card-desc">
+            <p>Harakatlanish va mustaqillikni qayta tiklash uchun ilg‘or texnologiyalar va individual
+              g‘amxo‘rlik orqali yaratilgan innovatsion protez yechimlari.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__right">
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h3>Mahsulotlar</h3>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="{% url 'products_uz' %}">Bionik protezlar</a></li>
+            <li class="footer__item"><a href="{% url 'products_uz' %}">Mexanik protezlar</a></li>
+            <li class="footer__item"><a href="{% url 'products_uz'%}">Kosmetik protezlar</a></li>
+            <li class="footer__item"><a href="{% url 'products_uz'%}">Oyoq protezlari</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Biz haqimizda</h3>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="{% url 'about_uz' %}">Kompaniya haqida</a></li>
+            <li class="footer__item"><a href="{% url 'about_uz' %}#contact">Aloqa ma’lumotlari</a></li>
+            <li class="footer__item"><a href="{% url 'about_uz' %}#partners">Bizning hamkorlarimiz</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Biz bilan bog‘lanish</h3>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="{% url 'contact_uz' %}">Maslahatga yozilish</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__logo-container">
+          <div class="footer__logo">
+            <img src="{% static 'icon/footer3.png' %}" alt="icon">
+            <img src="{% static 'icon/footer1.png' %}" alt="icon">
+            <img src="{% static 'icon/footer2.png' %}" alt="icon">
+            <img src="{% static 'icon/footer42.png' %}" alt="icon">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="footer__bottom-col"></div>
+    <div class="footer__bottom-col">
+      <p>© 2024 Brand, Inc.</p>
+      <ul>
+        <li>Maxfiylik</li>
+        <li>Shartlar</li>
+        <li>Xarita</li>
+      </ul>
+    </div>
+  </div>
+</div>

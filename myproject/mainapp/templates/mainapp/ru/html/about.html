@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yupiter</title>
+
+
+  <script type="module" crossorigin src="{% static 'js/main-CnO608fQ.js' %}"></script>
+  <link rel="stylesheet" crossorigin href="{% static 'css/main-DWKbr1L4.css' %}">
+</head>
+
+<body>
+    <header class="header" id="header">
+        {% include 'header.html' %}
+    </header>
+
+    <main>
+        <section class="section-info">
+            <div class="section-info__container">
+                <div class="section-info__content">
+                    <div class="section-info__left">
+                        <h2>Протезирование в Самарканде</h2>
+                        <p>Мы — одна из первых компаний в Самарканде, которая начала заниматься протезированием. С
+                            момента
+                            основания мы стремимся внедрять современные технологии и помогать людям возвращаться к
+                            активной
+                            и полноценной жизни. Наш приоритет — качество, надежность и забота о каждом клиенте.</p>
+                    </div>
+                    <div class="section-info__right">
+                        <img src="{% static 'img/about/aboutMain.png' %}" alt="" class="section-info__img">
+                    </div>
+                    <div class="section-info__background">
+                        <img src="{% static 'img/points.png' %}" alt="background" class="section-info__bg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-persons">
+            <div class="section-persons__container">
+                <div class="section-persons__content">
+                    <div class="section-persons__top">
+                        <h2>Мы не просто создаём протезы, <span>мы возвращаем людям возможности</span></h2>
+                    </div>
+                    {% for staff in staff %}
+                    <div class="section-persons__bottom">
+                        <div class="section-persons__cards">
+                            <div class="section-persons__card">
+                                <div class="section-persons__card-left">
+                                    <img src="{{ staff.image_staff.url }}" alt="person"
+                                        class="section-persons__card-img">
+                                </div>
+                                <div class="section-persons__card-right">
+                                    <div class="section-persons__card-col">
+                                        <p class="section-persons__card-title">{{ staff.name_staff_ru }}</p>
+                                        <p class="section-persons__card-subtitle">{{ staff.position_staff_ru }}</p>
+                                    </div>
+                                    <div class="section-persons__card-col">
+                                        <img src="{% static 'icon/quote.svg' %}" alt="quote" class="section-persons__card-quote">
+                                        <p class="section-persons__card-text">{{ staff.description_staff_ru }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="section-partners" id="partners">
+            <div class="section-partners__container">
+                <div class="section-partners__content">
+                    <div class="section-partners__top">
+                        <p>Наши партнеры</p>
+                    </div>
+                    <div class="section-partners__bottom">
+                        <div class="section-partners__col">
+                            <a href="#">
+                                <img src="{% static 'img/about/part1.png' %}" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="{% static 'img/about/part3.png' %}" alt="">
+                            </a>
+                        </div>
+
+                        <div class="section-partners__col">
+                            <a href="#">
+                                <img src="{% static 'img/about/part2.png' %}" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="{% static 'img/about/part4.png' %}" alt="">
+                            </a>
+                        </div>
+                        <!-- <img src="/images/about/part5.png" alt=""> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer" id="footer">
+        {% include 'footer.html' %}
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yupiter</title>
+
+
+  <script type="module" crossorigin src="{% static 'js/main-CnO608fQ.js' %}"></script>
+  <link rel="stylesheet" crossorigin href="{% static 'css/main-DWKbr1L4.css' %}">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    {% include 'header.html' %}
+  </header>
+  <!--  -->
+
+  <!-- INDEX MAIN -->
+  <main class="main" id="main">
+    <section class="main-section">
+      <div class="main__container container">
+        <div class="main-section__text">
+          <h1>Возьмите жизнь в свои руки</h1>
+          <p>Передовые протезные решения, возвращающие мобильность, независимость и уверенность</p>
+          <div>
+            <a href="{% url 'contact' %}" class="link-button main-section__btn">Пройти консультацию</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section__container">
+        <div class="section__header">
+          <h2>Наша миссия</h2>
+          <p>Мы стремимся создавать инновационные протезные решения,<br>которые позволяют людям жить полной жизнью.</p>
+        </div>
+        <div class="section__top">
+          <div class="section__items">
+            <div class="section__item">
+              <div class="section__img">
+                <img src="{% static 'img/section/form2.png' %}" alt="form1">
+              </div>
+              <div class="section__title">
+                <p>Индивидуальный подход</p>
+              </div>
+              <div class="section__desc">
+                <p>Каждый протез изготавливается индивидуально с учетом ваших уникальных анатомических особенностей и
+                  образа жизни.</p>
+              </div>
+            </div>
+            <div class="section__item">
+              <div class="section__img">
+                <img src="{% static 'img/section/form3.png' %}" alt="form1">
+              </div>
+              <div class="section__title">
+                <p>Передовые технологии</p>
+              </div>
+              <div class="section__desc">
+                <p>Современные материалы и электроника для естественности движений и максимального комфорта.</p>
+              </div>
+            </div>
+            <div class="section__item">
+              <div class="section__img">
+                <img src="{% static 'img/section/form1.png' %}" alt="form1">
+              </div>
+              <div class="section__title">
+                <p>Пожизненная поддержка</p>
+              </div>
+              <div class="section__desc">
+                <p>Комплексный последующий уход, корректировка и модернизация на протяжении всего периода
+                  использования протезов.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-second" id="products">
+      <div class="section__container2">
+        <div class="section__header">
+          <h2>Наша продукция</h2>
+          <p>Ознакомьтесь с нашим ассортиментом<br>передовых решений в области протезирования</p>
+        </div>
+        <div class="section__bottom">
+          <div class="section__products">
+            {% for pros in prosthetics %}
+                {% if pros.status == "ready" %}
+                    <div class="section__product">
+                      <div class="section__product-left">
+                        <img src="{{ pros.image.url }}" alt="product">
+                      </div>
+                      <div class="section__product-right">
+                        <h3>{{ pros.name_ru }}</h3>
+                        <p>{{ pros.description_ru|truncatechars:40 }}...</p>
+                        <a href="{% url 'products' %}">Узнать больше -></a>
+                      </div>
+                      <div class="section__product-btn">
+                        <a href="{% url 'products' %}">{{ pros.get_type_prosthetics_ru_display }}</a>
+                      </div>
+                    </div>
+                {% else %}
+                    <div class="section__product blur">
+                      <div class="section__product-left">
+                        <img src="{{ pros.image.url }}" alt="product">
+                      </div>
+                      <div class="section__product-right">
+                        <h3>{{ pros.name_ru }}</h3>
+                        <p>{{ pros.description_ru|truncatechars:40 }}...</p>
+                        <a href="{% url 'products' %}">Узнать больше -></a>
+                      </div>
+                      <div class="section__product-btn">
+                        <a href="{% url 'products' %}">{{ pros.get_type_prosthetics_ru_display }} Скоро...</a>
+                      </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="faq__container container">
+        <div class="faq__header">
+          <h1 class="faq__title">Часто задаваемые вопросы</h1>
+          <p class="faq__desc">Здесь можете найти ответы которые часто задают наши клиенты.</p>
+        </div>
+        <div class="faq__content">
+          <div class="faq__item">
+            <h3>Как я мог получить протез бесплатно?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut animi tenetur soluta possimus
+              atque enim blanditiis eligendi mollitia? Iusto, a tempora! Sint rerum voluptatum neque iusto
+              totam, veritatis sunt, velit harum aliquid in nobis! Praesentium quasi sit eos deserunt
+              vero?</p>
+            <div class="faq__arrow"><img src="{% static 'icon/arrow.svg' %}" alt="arrow"></div>
+          </div>
+          <div class="faq__item">
+            <h3>Что делать если протез сломался?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos modi fugit tempora nemo
+              doloremque blanditiis minima molestias reiciendis incidunt facere amet dolor veritatis
+              expedita, vero vel odit libero nulla pariatur, temporibus quas, corporis unde! Sit nihil
+              aperiam illum pariatur omnis nemo, vero esse provident ullam nostrum ad natus deserunt
+              delectus saepe deleniti quia tempora ab est. Velit inventore tempora consequatur
+              perspiciatis illo ad, itaque, voluptatum vero cum culpa architecto.</p>
+            <div class="faq__arrow"><img src="{% static 'icon/arrow.svg' %}" alt="arrow"></div>
+          </div>
+          <div class="faq__item">
+            <h3>Какой срок изготовления протеза?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos modi fugit tempora nemo
+              doloremque blanditiis minima molestias reiciendis incidunt facere amet dolor veritatis
+              expedita, vero vel odit libero nulla pariatur, temporibus quas, corporis unde! Sit nihil
+              aperiam illum pariatur omnis nemo, vero esse provident ullam nostrum ad natus deserunt
+              delectus saepe deleniti quia tempora ab est. Velit inventore tempora consequatur
+              perspiciatis illo ad, itaque, voluptatum vero cum culpa architecto.</p>
+            <div class="faq__arrow"><img src="{% static 'icon/arrow.svg' %}" alt="arrow"></div>
+          </div>
+          <div class="faq__item">
+            <h3>Могу ли я кастомизировать протез ?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos modi fugit tempora nemo
+              doloremque blanditiis minima molestias reiciendis incidunt facere amet dolor veritatis
+              expedita, vero vel odit libero nulla pariatur, temporibus quas, corporis unde! Sit nihil
+              aperiam illum pariatur omnis nemo, vero esse provident ullam nostrum ad natus deserunt
+              delectus saepe deleniti quia tempora ab est. Velit inventore tempora consequatur
+              perspiciatis illo ad, itaque, voluptatum vero cum culpa architecto.</p>
+            <div class="faq__arrow"><img src="{% static 'icon/arrow.svg' %}" alt="arrow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section section-cta">
+      <div class="section-cta__container container">
+        <div class="section-cta__content">
+          <div class="section-cta__left">
+            <img src="{% static 'img/cta.png' %}" alt="cta">
+          </div>
+          <div class="section-cta__right">
+            <div class="section-cta__text">
+              <p>Оставьте заявку — и получите персонально подобранный протез</p>
+            </div>
+            <div class="section-cta__bottom">
+              <a href="{% url 'contact' %}" class="link-button section-cta__btn">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-contacts" id="contact">
+      <div class="section-contacts__container">
+        <div class="section-contacts__header section__header">
+          <h2>Как нас найти?</h2>
+          <p class="section-contacts__text-header">
+            <span>На карте указан наш офис, также вы можете связаться с</span>
+            <span>нами через соцсети или по контактам ниже.</span>
+          </p>
+        </div>
+        <div class="section-contacts__content">
+          <div class="section-contacts__left">
+            <div class="section-contacts__col">
+              <p>Адрес:</p>
+              <p>
+                <span>г. Самарканд</span>
+                <span>Ул. Фирдоуси, 81А.</span>
+              </p>
+            </div>
+            <div class="section-contacts__col">
+              <p>Номер телефона:</p>
+              <p>
+                <span>+998 91 523 34 37</span>
+              </p>
+            </div>
+            <div class="section-contacts__col">
+              <p>Email:</p>
+              <p>
+                <span>info@prosthetichand.com</span>
+              </p>
+            </div>
+            <div class="section-contacts__col">
+              <p>Рабочие часы:</p>
+              <p>
+                <span>Понедельник-Суббота: 9:00 - 19:00</span>
+              </p>
+            </div>
+            <div class="section-contacts__media">
+              <a href="#">
+                <img src="{% static 'icon/a.social-link.svg' %}" alt="media">
+              </a>
+              <a href="#">
+                <img src="{% static 'icon/a.social-link-1.svg' %}" alt="media">
+              </a>
+              <a href="#">
+                <img src="{% static 'icon/a.social-link-2.svg' %}" alt="media">
+              </a>
+              <a href="#">
+                <img src="{% static 'icon/a.social-link-3.svg' %}" alt="media">
+              </a>
+            </div>
+          </div>
+          <div class="section-contacts__right">
+            <div class="section-contacts__map-block">
+              <iframe id="IfRame"
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A1d094dbf25c9c7ee507ae41cfa929b46bd5321e85f94740d084ba72dc7044d5e&amp;source=constructor"
+                width="711" height="455" frameborder="0"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-contacts__background">
+        <img src="{% static 'img/points.png' %}" alt="points">
+      </div>
+    </div>
+
+    <div class="section-thank">
+      <div class="section-thank__header">
+        <h2>Спасибо что выбираете нас!</h2>
+      </div>
+    </div>
+
+  </main>
+  <!--  -->
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    {% include 'footer.html' %}
+  </footer>
+  <!--  -->
+</body>
+
+</html>
