@@ -29,7 +29,7 @@ def contact(request):
         phone = request.POST['phone']
         type_amputation = request.POST['type_amputation']
         description = request.POST['textarea']
-        email = 'nikitospogorelyn@gmail.com'
+        email = ''
 
         try:
             subject = 'Новая заявка на консультацию'
@@ -109,7 +109,7 @@ def contact_uz(request):
         phone = request.POST['phone']
         type_amputation = request.POST['type_amputation']
         description = request.POST['textarea']
-        email = 'nikitospogorelyn@gmail.com'
+        email = ''
 
         try:
             subject = 'Новая заявка на консультацию'
