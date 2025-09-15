@@ -132,10 +132,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CELERY_TASK_ALWAYS_EAGER = True
 
 # Настройка отправки письма
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT=465
-EMAIL_USE_TLS=False
-EMAIL_USE_SSL=True
-EMAIL_HOST_USER='nikitospogorelyn@gmail.com'
-EMAIL_HOST_PASSWORD='nrgv xtsy qakv jqkw'
+EMAIL_BACKEND=''
+EMAIL_HOST=''
+EMAIL_PORT=
+EMAIL_USE_TLS=
+EMAIL_USE_SSL=
+EMAIL_HOST_USER=''
+EMAIL_HOST_PASSWORD=''
